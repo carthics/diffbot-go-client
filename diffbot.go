@@ -64,7 +64,7 @@ func DiffbotServer(server, method, token, url string, opt *Options) (body []byte
 }
 
 func makeRequestUrl(server, method, token, webUrl string, opt *Options) string {
-	return fmt.Sprintf("%s/%s?token=%s&url=%s%s",
+	return fmt.Sprintf("%s/%s?token=%s&url=%s%s&norender=true&discussion=false",
 		server, method, token, urlPkg.QueryEscape(webUrl), opt.MethodParamString(method),
 	)
 }
